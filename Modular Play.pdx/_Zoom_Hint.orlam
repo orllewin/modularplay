@@ -1,0 +1,23 @@
+{
+	"cables": [
+	],
+	"globalX":701,
+	"globalY":-64,
+	"modules": [
+		 {
+			"label":"TOO SMALL?",
+			"modId":"LargeLabelMod751665197",
+			"type":"LargeLabelMod",
+			"x":-501,
+			"y":164
+		},
+		 {
+			"label":"Tap B in empty space to zoom",
+			"modId":"LabelMod751665292",
+			"type":"LabelMod",
+			"x":-501,
+			"y":208
+		}
+	],
+	"name":"ZOOMHINT"
+}

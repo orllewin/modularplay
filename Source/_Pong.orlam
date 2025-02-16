@@ -1,0 +1,16 @@
+{
+	"cables": [
+	],
+	"globalX":748,
+	"globalY":-84,
+	"modules": [
+		 {
+			"modId":"PongMod747763330",
+			"type":"PongMod",
+			"x":-548,
+			"y":204
+		}
+	],
+	"name":"PONG",
+	"scale":2
+}

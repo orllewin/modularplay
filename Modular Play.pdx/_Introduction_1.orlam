@@ -1,0 +1,46 @@
+{
+	"cables": [
+	],
+	"globalX":797,
+	"globalY":0,
+	"modules": [
+		{
+			"imagePath":"Images\/modular_arial",
+			"alpha": 0.2,
+			"modId":"ImageMod1",
+			"type":"ImageMod",
+			"x":-660,
+			"y":55
+		},
+		{
+			"label":"Tip: hold down (B) while moving to move around the patch space more quickly",
+			"modId":"LabelMod742299300",
+			"type":"LabelMod",
+			"x":-470,
+			"y":40
+		},
+		{
+			"label":"Use the direction buttons to move around a patch, tap the button to continue",
+			"modId":"LabelMod742299321",
+			"type":"LabelMod",
+			"x":-470,
+			"y":155
+		},
+		{
+			"direction":7,
+			"modId":"ArrowMod742299741",
+			"type":"ArrowMod",
+			"x":-546,
+			"y":185
+		},
+		{
+			"label":"Start Tutorial",
+			"modId":"ButtonMod742298907",
+			"type":"ButtonMod",
+			"navTarget": "_Introduction_2.orlam",
+			"x":-600,
+			"y":220
+		}
+	],
+	"name":"Introduction 1"
+}
