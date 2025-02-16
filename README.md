@@ -18,6 +18,8 @@ Modular Play _really_ pushes the Playdate - as well as wrapping the audio engine
 
 The 'Granular' module is the latest (and buggiest) module, it's a good example of what not to do, has too much ui refreshing. In fact if I was doing this again I'd limit sample handling to a single simple module that plays a single sample when triggered, nothing more.  
 
+The project will continue to be sold at [orllewin.itch.io/modularplay](https://orllewin.itch.io/modularplay) but for a reduced price (TBD, probably £5). **Licence also TBD**. If anyone contributes significantly I'm open to some kind of informal profit sharing in the future (but honestly it doesn't make much).   
+
 ## Modules
 
 Each module has a parent `module_mod.lua` with a child `module_component.lua`. The module should generally handle ui, with the component handling the core functionality (clock events, audio, effects etc). 
