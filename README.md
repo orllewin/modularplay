@@ -1,6 +1,5 @@
 # Modular Play for Playdate
 
-![[modular_play_logo.png]]
 ## About
 
 Modular Play is a casual playground game on [Playdate](https://play.date) for building little music making patches by connecting modules with cables. It's meant to be fun and not really for serious use but it can create some beautiful music.
@@ -184,7 +183,7 @@ The `cableOriginModSubtype` tells the target module what's at the other end of t
 
 **Important**: The Playdate audio engine is additive - if you have 5 audio sources each should be set to have a volume of around 2 to avoid clipping. You get used to it, but it's painful at first.
 
-![[dronescape.gif]]
+![](./images/dronescape.gif)
 Screenshots on this site might include unfinished or older versions of modules.
 
 ## Found a bug?
@@ -205,7 +204,7 @@ This is a complex piece of software, there will be bugs, especially in the Alpha
       
     _Trivia: .orlam stands for Orllewin Analog Modular, which is what this project used to be called before I settled on Modular Play._
     
-![[another_patch.png]]
+![](./images/another_patch.png)
 
 # Modules
 
@@ -215,25 +214,25 @@ Most of the included modules (newer ones aren't here), in the order they appear 
 
 ## Clock
 
-![[clock.png]]
+![](./images/clock.png)
 
 The first module you'll add to most patches, generates a periodic 'bang' that's passed from module to module until it finds something that transforms clock events to a midi note or controls some other parameter. There's a single encoder to control the tempo, and four sockets to connect to other clock routing modules.
 
 ## Bubble Chamber
 
-![[bubble_chamber.png]]
+![](./images/bubble_chamber.png)
 
 Balls/Particles/Molecules bounce around a box, when they hit the sides a clock event is emitted. Change the velocity and add and remove balls from the menu to change the random tempo.
 
 ## Clock Delay
 
-![[clock_delay.png]]
+![](./images/clock_delay.png)
 
 Randomly holds on to a note for a precise interval, the chance of this happening controlled by the right-hand encoder. Useful for adding a little randomness to sequenced melodies and drum patterns.
 
 ## Clock Divider
 
-![[clock_divider.png]]
+![](./images/clock_divider.png)
 
 Swallows every other clock event, halving the tempo.
 
@@ -241,67 +240,67 @@ Swallows every other clock event, halving the tempo.
 
 ## Midi Keyboard
 
-![[midi_keyboard.png]]
+![](./images/midi_keyboard.png)
 
 Emits midi notes. Not practical but useful for trying out synth sounds quickly. Try _System > Midi/Serial Input_ with external hardware instead.
 
 ## Pedal
 
- ![[pedal.png]]
+ ![](./images/pedal.png)
 
 Emits a single event when pressed, and another when released. Used for controlling the sampler, or toggling a switch. The default mode emulates a momentary pedal: fires an event when pressed and another when released. To switch modes tap the top header area where you can change the pedal to fire a single event when clicked.
 
 ## Random
 
-![[random.png]]
+![](./images/random.png)
 
 Emits a random number from 0.0 to 1.0 when it receives a bang. Limited use currently.
 
 ## Oscillator
 
-![[oscillator.png]]
+![](./images/oscillator.png)
 
 Pseudo-oscillator for controlling various parameters. Top encoder controls centre position (in range 0.0 to 1.0), middle encoder controls width (0.0 to 1.0), and bottom encoder sets the period.
 
 ## Oscillator 2
 
-![[oscillator2.png]]
+![](./images/oscillator2.png)
 
 Same as Oscillator but uses less space on the screen, switch between encoders by tapping and selecting from the popup menu.
 
 ## Bifurcate x2
 
-![[bifurcate2.png]]
+![](./images/bifurcate2.png)
 
 Splits a clock signal into two allowing you to extend your patch. Can be rotated via a menu option before the first cable is connected.
 
 ## Bifurcate x4
 
-![[bifurcate4.png]]
+![](./images/bifurcate4.png)
 
 As above but splits a clock signal into four.
 
 ## Blackhole
 
-![[blackhole.png]]
+![](./images/blackhole.png)
 
 Swallows events. Encoder controls gravity, the higher the gravity the lower the chance an event will escape.
 
 ## XY Tilt
 
-![[xy_tilt.png]]
+![](./images/xy_tilt.png)
 
 Physically tilt your Playdate to emit events along the X and Y axis. Useful for live control of synth parameters. This is a fairly intensive module so limit to one per patch if possible.
 
 ## Y Tilt
 
-![[y_tilt.png]]
+![](./images/y_tilt.png)
 
 Same as XY Tilt but only operates on the Y axis.
 
 ## Print/Log
 
-![[print_log.png]]
+![](./images/print_log.png)
 
 Displays event value and relays it on to next module. Only really useful for debugging.
 
@@ -309,31 +308,31 @@ Displays event value and relays it on to next module. Only really useful for deb
 
 ## Generative Standard
 
-  ![[generative.png]]
+  ![](./images/generative.png)
 
 A key module, Generative combines a handful of modules internally, when it receives a clock event it decides whether to delay the bang, maybe swallow it in a black hole, and then converts it to a random midi note in the given scale. Combine in a simple patch with a Clock, a Synth, and a Speaker/Output to generate a random arpeggiated sequence.
 
 ## Generative Random
 
-![[generative_random.png]]  
+![](./images/generative_random.png)  
 
 Combines Bubble Chamber with the logic of Generative Standard: every time a ball/particle/molecule hits a wall a random note is emitted from the selected scale.
 
 ## Arpseq
 
-![[arpseq.png]]
+![](./images/arpseq.png)
 
 A traditional 'piano roll'/'swimlane' arpeggiator style sequencer. Create short melodies/hooks in otherwise random patches. Works well with Bubble Chamber as a clock event source.
 
 ## Micro Sequencer
 
-![[micro_sequencer.png]]
+![](./images/micro_sequencer.png)
 
 16 step sequencer. Write simple melodies. Put a Clock Delay and/or Blackhole before this module to add some variation to timings. A more versatile variable step sequencer is under development, not quite ready for the Alpha release.
 
 ## Drone Seq
 
-![[droneseq.png]]
+![](./images/droneseq.png)
 
 Emits up to four midi notes which never turn off. Combine with a synth with automated parameters to generate unending evolving drones. If you change a synth preset you'll need to re-trigger the note in this module.
 
@@ -341,31 +340,31 @@ Emits up to four midi notes which never turn off. Combine with a synth with auto
 
 ## Random Repeater
 
- ![[random_repeater.png]]
+ ![](./images/random_repeater.png)
 
 Spread midi note events across multiple synths; when a note event is received it's emitted at one of the connected output sockets, chosen at random
 
 ## Random Shifter
 
-![[random_shifter.png]]
+![](./images/random_shifter.png)
 
 When Random Shifter receives a midi note event it randomly decides whether to emit at the original pitch, up and octave, or down an octave - each with 33.3% probability.
 
 ## Linear Switch
 
-![[linear_switch.png]]
+![](./images/linear_switch.png)
 
 Control if clock events reach a section of your patch with a Linear Switch, can be toggled manually or automated with the bottom socket.
 
 ## Dual Switch
 
- ![[dual_switch.png]]
+ ![](./images/dual_switch.png)
 
 Switch between two different paths, can be toggled manually or automated with the bottom socket.
 
 ## Timed Switch
 
-![[timed_switch.png]]
+![](./images/timed_switch.png)
 
 Automate toggling areas of your patch with a timed switch controlled by a number of clock events. `mm.` is musical notation for a bar. Use a Timed Switch to automate a Dual Switch to move between two areas of a patch every n bars.
 
@@ -373,19 +372,19 @@ Automate toggling areas of your patch with a timed switch controlled by a number
 
 ## Orl Drum Machine
 
- ![[orl_drum_machine.png]]
+ ![](./images/orl_drum_machine.png)
 
 A 16 step drum machine. Use the encoders to choose from the built-in 606, 808, and 909 sample sets. Use a Clock Delay and/or Blackhole to add randomness to your patterns.
 
 ## OR-606
 
- ![[or606.png]]
+ ![](./images/or606.png)
 
 A simple emulation of the classic Roland TR-606.
 
 ## OR-808
 
-![[or808.png]]
+![](./images/or808.png)
 
 A simple emulation of the classic Roland TR-808.
 
@@ -397,49 +396,49 @@ A simple emulation of the classic Roland TR-909.
 
 ## Wavetable
 
-![[wavetable.png]]
+![](./images/wavetable.png)
 
 A wavetable synth with a single dimension modifier. This allows you to morph the sound in the X axis. The axis position can be automated with one of the accelerometer modules or an oscillator.
 
 ## 2D Wavetable
 
-![[wavetable_2d.png]]
+![](./images/wavetable_2d.png)
 
 Same as Wavetable but allows morphing the sound across the X and Y axis.
 
 ## ORL Sample Synth
 
-![[orl_sample_synth.png]]
+![](./images/orl_sample_synth.png)
 
 A simple synth that pitches samples to midi notes. There's a variety of built-in categories but you can also use your own samples (record samples tuned to C with the Sampler module), this is limited somewhat by the gain of the condenser microphone, a method to import pre-recorded WAVs will come soon.
 
 ## ORL Synth
 
-![[orl_synth.png]]
+![](./images/orl_synth.png)
 
 A basic synth with the usual waveform primitives (Sine, Square, Triangle, Saw) plus three Teenage Engineering presets from their Pocket Operator series. The Teenage Engineering synths have two additional parameters which can be automated from the two input sockets
 
 ## Noise Box
 
-![[noise_box.png]]
+![](./images/noise_box.png)
 
 Generates evolving noise. Internally a low-pass filter with oscillator modulates the sound.
 
 ## Micro synth
 
-![[micro_synth.png]]
+![](./images/micro_synth.png)
 
 Same sounds as the Orl Synth but without envelope or parameter controls, tap to open the menu and change the waveform. Useful for larger patches with multiple synths to lower the strain on the processor (it uses less resources to draw).
 
 ## Stochastic Primitives
 
-![[stochastic_primitives.png]]
+![](./images/stochastic_primitives.png)
 
 A trio of synth modules developed for use in the onboarding/introduction patches. Internally they have a simple synth controlled by a random number generator, clock delay, a blackhole and a delay effect, they play random melodies in C Major.
 
 ## Wavetable Sigen
 
-![[wavetable_sig_gen.png]]
+![](./images/wavetable_sig_gen.png)
 
 Another test module that's been left in, was used to debug x-axis wavetable interpolation. Sounds awful.
 
@@ -447,21 +446,21 @@ Another test module that's been left in, was used to debug x-axis wavetable inte
 
 ## Sample Record
 
-![[sample_record.png]]
+![](./images/sample_record.png)
 
 Records audio from the Playdate internal microphone. Can be toggled with a menu item, or combine with a Pedal module. There's a built-in sampler patch `File > Load > Sample` for this purpose, the module is quite processor heavy so shouldn't be used as part of another patch. Currently you need to delete samples with a computer via a USB cable and putting the Playdate into storage mode, sample management will be added in the future to simplify things.
 
 ## Sample Play
 
-![[sample_play.png]]
+![](./images/sample_play.png)
 
 Play back recorded samples. The encoders control start point, end point, and pitch. There's an in socket for use with the Pedal module or automation.
 
 ## Hexagram
 
-![[hexagram.png]]
+![](./images/hexagram.png)
 
-![[hexagram_patch.png]]
+![](./images/hexagram_patch.png)
 
 A Modular Play implementation of the Hexagram Playdate app. This is very powerful but can summon demons. It records samples in a circular buffer and plays subsamples back at different pitches and randomly reversed. Allow it to record for a while then switch to idle mode to prevent excessive sampling of it's own output. There's a built-in patch to use Hexagram as a live effect in a larger hardware setup in `File > Load > Hexagram`
 
@@ -469,37 +468,37 @@ A Modular Play implementation of the Hexagram Playdate app. This is very powerfu
 
 ## Krush
 
- ![[krush.png]]
+ ![](./images/krush.png)
 
 A Bitcrusher. Controls are 'amount', 'undersampling', and 'mix'. Use to add some dirt to drums and drones.
 
 ## Delay
 
-![[delay.png]]
+![](./images/delay.png)
 
 A Delay. Controls are 'time', 'feedback', and 'mix'. I use this a lot.
 
 ## Lo-Pass
 
-![[lo_pass.png]]
+![](./images/lo_pass.png)
 
 A low-pass filter. Controls are 'frequency', 'resonance', and 'mix'.
 
 ## Hi-Pass
 
-![[hi_pass.png]]
+![](./images/hi_pass.png)
 
 A high-pass filter. Controls are 'frequency', 'resonance', and 'mix'.
 
 ## Overdrive
 
-![[overdrive.png]]
+![](./images/overdrive.png)
 
 Overdrive. Controls are 'gain', 'limit', and 'mix'. Can also be used to make quiet recorded samples louder.
 
 ## Ring Modulator
 
-![[ring_modulator.png]]
+![](./images/ring_modulator.png)
 
 A ring modulator. Controls are 'frequency' and 'mix'. Sounds awful.
 
@@ -509,25 +508,25 @@ _All outputs mimic a real-world amp and speaker. The Playdate audio engine is ad
 
 ## Basic Output
 
-![[basic_output.png]]
+![](./images/basic_output.png)
 
 A speaker. You can change the volume by tapping to open the menu.
 
 ## Single Output
 
-![[single_output.png]]
+![](./images/single_output.png)
 
 Same as Basic Output but there's an on-screen encoder for the volume. We don't really need two but earlier in development on-screen encoders had a performance overhead, that's been fixed but both modules remain.
 
 ## 4 Channel
 
-![[four_channel.png]]
+![](./images/four_channel.png)
 
 A 4 channel mixer. Makes managing volumes easier than having single/basic output modules everywhere (remember there's a performance overhead with long cables though).
 
 ## 4 Channel Pro
 
-![[four_channel_pro.png]]
+![](./images/four_channel_pro.png)
 
 Similar as the 4 Channel mixer but with encoders to control left-right panning, the bottom of the module has four input sockets to automate volume - this is useful for fading parts of a patch in and out, especially good for drones.
 
@@ -537,21 +536,21 @@ _These modules were added for the built-in introduction patches but they're stil
 
 ## Label
 
-![[label_keyboard.png]]
+![](./images/label_keyboard.png)
 
-![[label.png]]
+![](./images/label.png)
 
 A small label using the default Modular Play font. When you add the module an on-screen keyboard is displayed so you can add your text.
 
 ## Large Label
 
-![[large_label.png]]
+![](./images/large_label.png)
 
 As above, but with larger font and no border.
 
 ## Label Arrow
 
-![[label_arrow.png]]
+![](./images/label_arrow.png)
 
 To point at things, use together with the text labels.
 
@@ -559,7 +558,7 @@ To point at things, use together with the text labels.
 
 ## Serial Bang Input
 
-![[mod_serial_bang.png]]
+![](./images/mod_serial_bang.png)
 
 Receives a `msg b1` event over the serial interface where the number is a value from 1 to 16.  Each Serial Bang module can be assigned a bang ID from 1 to 16 from its menu. Useful for triggering.
 
@@ -570,7 +569,7 @@ The system menu contains various system-wide toggles as well as a couple of modu
 
 ## Midi/Serial Input
 
-![[midi_serial_input.png]]
+![](./images/midi_serial_input.png)
 
 For use with external hardware - more on this soon.  
 _Will not work with standard USB Midi, though it'd be amazing if Panic added support for that._
