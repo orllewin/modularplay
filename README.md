@@ -8,6 +8,15 @@ Modular Play is a casual playground game on [Playdate](https://play.date) for bu
 
 Itch.io link: [orllewin.itch.io/modularplay](https://orllewin.itch.io/modularplay)
 
+## Demos
+
+* [GB
+JAMUARY 2024: Ambient Tones With Ripplemaker & Playdate](https://www.youtube.com/watch?v=M_XUes4eDZY) - by Perplex On
+* [10/10 ambient highwater skinny jeans marimba yuccie mix](https://www.youtube.com/watch?v=YxTM-LiUHHM&t=43s) - by Arman Bohn
+* [Hexagram + Modular Play on Playdate 2](https://www.youtube.com/watch?v=usdHqm_GVkI) - by Orllewin
+* [November 2024 drone](https://www.youtube.com/watch?v=zbyWlR4KCyk) - by Orllewin
+
+
 ## Found a bug?
 
 This is a complex piece of software, there will be bugs. If you find an issue [post here in Github issues](https://github.com/orllewin/modularplay/issues) _or_ comment in the [itch.io community thread](https://itch.io/t/3248289/bug-reports).
