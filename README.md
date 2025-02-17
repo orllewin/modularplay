@@ -573,18 +573,6 @@ The system menu contains various system-wide toggles as well as a couple of modu
 For use with external hardware - more on this soon.  
 _Will not work with standard USB Midi, though it'd be amazing if Panic added support for that._
 
-# Planned Roadmap
-
-Although the Alpha is a paid app on itch.io you'll get all future upgrades and improvements. **Only purchase if you understand there will be rough edges and occasional crashes** - there are no refunds unless the software is utterly non-functional.
-
-- 28/10/2023: 0.0.9 Alpha - initial release for early adopters, will have too many bugs, some unfinished modules are hidden. Here be dragons.
-- 0.0.10 .. 0.0.n Alphas - patch releases with regular fixes over the first month or two, including adding currently unfinished new modules.
-- 0.1.0 Beta - a release candidate, approaching stability.
-- 1.0.0 - Fewer unwelcome surprises.
-- ?.?.? - Desktop midi to serial bus.
-- ?.?.? - Companion Android app (code will be freely available if anyone wants to port to iOS, I may try myself if I can find the time).
-- ?.?.? - Hardware foot pedal project with instructions and code for recording samples.
-
 # Performance and Limitations
 
 _This is lengthy and won't be of interest for everyone, if you just want to make nice melodies while sitting on the train or whatever you can skip all of the information below._
