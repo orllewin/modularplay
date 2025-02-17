@@ -1,5 +1,7 @@
 # Modular Play for Playdate
 
+![](./images/dronescape.gif)
+
 ## About
 
 Modular Play is a casual playground game on [Playdate](https://play.date) for building little music making patches by connecting modules with cables. It's meant to be fun and not really for serious use but it can create some beautiful music.
@@ -182,9 +184,6 @@ The `cableOriginModSubtype` tells the target module what's at the other end of t
 ## Volume
 
 **Important**: The Playdate audio engine is additive - if you have 5 audio sources each should be set to have a volume of around 2 to avoid clipping. You get used to it, but it's painful at first.
-
-![](./images/dronescape.gif)
-Screenshots on this site might include unfinished or older versions of modules.
 
 ## Found a bug?
 
