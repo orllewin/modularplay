@@ -8,6 +8,10 @@ Modular Play is a casual playground game on [Playdate](https://play.date) for bu
 
 Itch.io link: [orllewin.itch.io/modularplay](https://orllewin.itch.io/modularplay)
 
+## Found a bug?
+
+This is a complex piece of software, there will be bugs. If you find an issue [post here in Github issues](https://github.com/orllewin/modularplay/issues) _or_ comment in the [itch.io community thread](https://itch.io/t/3248289/bug-reports).
+
 # Building
 
 Download the Playdate SDK: [sdk.play.date](https://sdk.play.date/) and install [Nova](https://nova.app/). Open the repo in Nova and activate the *Playdate Simulator* task in Project Settings.
@@ -184,10 +188,6 @@ The `cableOriginModSubtype` tells the target module what's at the other end of t
 ## Volume
 
 **Important**: The Playdate audio engine is additive - if you have 5 audio sources each should be set to have a volume of around 2 to avoid clipping. You get used to it, but it's painful at first.
-
-## Found a bug?
-
-This is a complex piece of software, there will be bugs, especially in the Alpha and Beta releases. If you find an issue [comment in the itch.io community thread](https://itch.io/t/3248289/bug-reports)
 
 # General Info and Instructions
 
