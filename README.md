@@ -27,7 +27,7 @@ Download the Playdate SDK: [sdk.play.date](https://sdk.play.date/) and install [
 
 # Contributing
 
-This beast of a project (30k+ LOC) grew from a basic proof-of-concept where cables were dragged between a few modules and events propagated from one to another. The original developer did/does not know Lua well which should be obvious to anyone browsing the code. 
+This beast of a project (30k+ LOC) grew from a basic proof-of-concept where cables were dragged between a few modules and events propagated from one to another ([view the very first demo](./readme_assets/modular_play_first_demo.mp4) from May 2023). The original developer did/does not know Lua well which should be obvious to anyone browsing the code. 
 
 Each module follows some basic conventions instead of having tight contracts/interfaces (which may or may not be possible in Lua, I have no idea, I was having too much fun building this thing and didn't think to learn Lua properly), when hunting the root cause of bugs 90% can be found in a bad implementation of some core ideas, most likely they fail to detach a cable properly when deleting an attached module leaving things in a broken state (a lot of bugs can be replicated by following steps reported by users that generally involve adding, then deleting, a certain module). 
 
