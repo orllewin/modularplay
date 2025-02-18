@@ -2,7 +2,7 @@
 	© 2023 Orllewin - All Rights Reserved.
 ]]--
 import 'Modules/mod_utils.lua'
-import 'Modules/Synths/WavetableSynth/wavetable_synth_component'
+import 'Modules/Synths/WaveTableSynth/wavetable_synth_component'
 
 class('WavetableSynthMod').extends(playdate.graphics.sprite)
 

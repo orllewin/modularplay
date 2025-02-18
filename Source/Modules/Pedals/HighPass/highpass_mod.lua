@@ -2,7 +2,7 @@
 	© 2023 Orllewin - All Rights Reserved.
 ]]
 import 'Modules/mod_utils.lua'
-import 'Modules/Pedals/Highpass/highpass_component'
+import 'Modules/Pedals/HighPass/highpass_component'
 import 'Modules/mod_about_popup'
 import 'Modules/module_menu'
 import 'Coracle/math'
