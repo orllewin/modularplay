@@ -190,6 +190,34 @@ The `cableOriginModSubtype` tells the target module what's at the other end of t
 
 ---
 
+## Serial communication
+
+Playdate have added a simple serial API to the Playdate:
+
+```
+playdate.serialMessageReceived(message)
+
+Called when a `msg <text>` command is received on the serial port. The text following the command is passed to the function as the string _message_.
+
+Running `!msg <message>` in the simulator Lua console sends the command to the device if one is connected, otherwise it sends it to the game running in the simulator.
+```
+
+You'll need to code something yourself to send these events to the Playdate. 
+
+For Modular Play use `c` and `m` and `b` prefixes followed by a number:
+* `c` is for clock and should be followed by a number, 1 to 16.
+* `m` is for midi-note and should be followed by a valid midi note number. 
+* `b` is for bang, and should be followed by a number
+
+Examples:
+
+`msg c1` - send the first beat of a bar.
+`msg m112` - send midi note number 112.
+`msg b3` - send a bang event to a bang module with id 3.
+
+
+---
+
 ## Use Headphones
 
 **Important**: Modular Play needs to be used with external speakers of some kind, either with headphones or as part of a bigger music-making setup. The in-built Playdate speaker is tiny and has a very narrow range of usable frequencies.
