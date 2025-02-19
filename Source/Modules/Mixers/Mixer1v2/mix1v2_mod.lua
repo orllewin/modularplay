@@ -2,7 +2,7 @@
 	© 2023 Orllewin - All Rights Reserved.
 ]]
 import 'Modules/mod_utils.lua'
-import 'Modules/sprites/small_socket_sprite'
+import 'Modules/Sprites/small_socket_sprite'
 
 class('Mix1v2Mod').extends(playdate.graphics.sprite)
 

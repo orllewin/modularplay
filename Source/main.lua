@@ -70,8 +70,8 @@ print("> import: value generator modules done")
 -- Modules - Pedals (mostly effects)
 import 'Modules/Pedals/Bitcrusher/bitcrusher_mod'
 import 'Modules/Pedals/Delay/delay_mod'
-import 'Modules/Pedals/Highpass/highpass_mod'
-import 'Modules/Pedals/Lowpass/lowpass_mod'
+import 'Modules/Pedals/HighPass/highpass_mod'
+import 'Modules/Pedals/LowPass/lowpass_mod'
 import 'Modules/Pedals/OnePoleFilter/one_pole_filter_mod'
 import 'Modules/Pedals/Overdrive/overdrive_mod'
 import 'Modules/Pedals/RingModulator/ring_modulator_mod'

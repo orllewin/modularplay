@@ -96,8 +96,8 @@ import 'Modules/Synths/StochasticSquare/stochastic_square_mod'
 import 'Modules/Synths/StochasticSine/stochastic_sine_mod'
 import 'Modules/Synths/OrlSynth/synth_mod'
 import 'Modules/Synths/OrlSampleSynth/sample_synth_mod'
-import 'Modules/Synths/WavetableSynth/wavetable_synth_mod'
-import 'Modules/Synths/WavetableSynth2D/wavetable_synth2d_mod'
+import 'Modules/Synths/WaveTableSynth/wavetable_synth_mod'
+import 'Modules/Synths/WaveTableSynth2D/wavetable_synth2d_mod'
 import 'Modules/Synths/WavetableHz/wavetable_hz_mod'
 
 print("ModularScreen import: modules synths done")
@@ -141,7 +141,7 @@ print("ModularScreen import: modules ui done")
 
 import 'Modules/Serial/SerialMidiNoteInput/serial_in_mod'
 import 'Modules/Serial/SerialClockInput/serial_clock_mod'
-import 'Modules/Serial/Serialbang/serial_bang_mod'
+import 'Modules/Serial/SerialBang/serial_bang_mod'
 
 print("ModularScreen import: modules pedal and serial in done")
 
