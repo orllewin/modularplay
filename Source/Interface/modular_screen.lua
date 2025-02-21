@@ -36,6 +36,7 @@ print("ModularScreen import: deprecated sprites done")
 
 --Experimental
 import 'Modules/Clocks/BouncingBallClock/bouncing_ball_clock_mod'
+import 'Modules/Midi/MidiNoteEmit/midi_note_emit_mod'
 
 print("ModularScreen import: modules BouncingBall clock done")
 

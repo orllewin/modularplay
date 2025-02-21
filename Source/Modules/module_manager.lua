@@ -523,6 +523,11 @@ function ModuleManager:getGhostSprite(type)
 		return BouncingBallClockMod.ghostModule()
 	end
 	
+	--midi
+	if name == "MidiNoteEmitterMod" then
+		return MidiNoteEmitterMod.ghostModule()
+	end
+	
 	if name == "ArpMod" then
 		return ArpMod.ghostModule()
 	elseif name == "Merge2Mod" then
@@ -857,6 +862,11 @@ function ModuleManager:addNewAt(type, x, y)
 		self:addNew(PongMod(x, y))
 	elseif name == "GameOfLifeMod" then
 		self:addNew(GameOfLifeMod(x, y))
+	end
+	
+	--midi
+	if name == "MidiNoteEmitterMod" then
+		self:addNew(MidiNoteEmitterMod(x, y))
 	end
 end
 
