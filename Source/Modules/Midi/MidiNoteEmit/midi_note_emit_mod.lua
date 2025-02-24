@@ -9,16 +9,11 @@ class('MidiNoteEmitterMod').extends(playdate.graphics.sprite)
 
 local gfx <const> = playdate.graphics
 
-local arrowMajorImage = playdate.graphics.image.new("Images/arrow_up")
-local arrowMinorImage = playdate.graphics.image.new("Images/arrow_down")
-
-local moduleWidth = 55
-local moduleHeight = 75
+local moduleWidth = 40
+local moduleHeight = 50
 
 local modType = "MidiNoteEmitterMod"
 local modSubtype = "midi"
-
-local notes = {"C", "C#", "D", "E♭", "E", "F", "F#", "G", "A♭", "A", "B♭", "B"}
 
 function MidiNoteEmitterMod:init(xx, yy, modId)
 	MidiNoteEmitterMod.super.init(self)
@@ -31,7 +26,21 @@ function MidiNoteEmitterMod:init(xx, yy, modId)
 	
 	self.modType = modType
 	self.modSubtype = modSubtype
+	
+	self.component = MidiNoteEmitterComponent()
+	
+	self.noteEncoderVector = Vector(xx, yy - 7)
+	self.noteEncoderValue = map(self.component:getMidiNote(), 36, 95, 0.0, 1.0)
 		
+	self:redrawBackground()
+	self:moveTo(xx, yy)
+	self:add()
+			
+	self.socketInVector = Vector(xx - 20, yy - (moduleHeight/2) + 20)
+	self.socketOutVector = Vector(xx + 21, yy - (moduleHeight/2) + 20)
+end
+
+function MidiNoteEmitterMod:redrawBackground()
 	local backgroundImage = generateModBackgroundWithShadow(moduleWidth, moduleHeight)	
 	local bgW, bgH = backgroundImage:getSize()
 	gfx.pushContext(backgroundImage)
@@ -40,38 +49,35 @@ function MidiNoteEmitterMod:init(xx, yy, modId)
 	leftSocket:draw(10, 32)
 	
 	local rightSocket = assets:image("side_socket_right")
-	rightSocket:draw(97, 32)
+	rightSocket:draw(moduleWidth + 12, 32)
+	
+	local note = playdate.graphics.imageWithText(self.component:getNoteStr(), moduleWidth, 10)
+	local noteWidth, noteHeight = note:getSize()
+	note:draw((moduleWidth/2), moduleHeight)
+	
+	gEncoder:setValue(self.noteEncoderValue)
+	local noteEncoderImage = gEncoder:getImage()
+	noteEncoderImage:draw(24, 22)
 	
 	gfx.popContext()
 	
 	self:setImage(backgroundImage)
-	self:moveTo(xx, yy)
-	self:add()
-	
-	self.component = MidiNoteEmitterComponent()
-	
-	local noteC = playdate.graphics.imageWithText("C", 20, 20)
-	self.noteSprite = gfx.sprite.new(noteC)
-	self.noteSprite:moveTo(xx - 19, yy - 28)
-	self.noteSprite:add()
-	
-	self.noteEncoder = RotaryEncoder(xx - 19, yy - 12, function(value)
-		local noteIndex = math.floor(map(value, 0.0, 1.0, 1, 127))
-		local image = playdate.graphics.imageWithText(notes[noteIndex], 20, 20)
-		self.noteSprite:setImage(image)
-		self.component:setValue(value)
-	end)
-	
-	self.encoders = {
-		self.noteEncoder,
-	}
-		
-	self.socketInVector = Vector(xx - 40, yy - (moduleHeight/2) + 20)
-	self.socketOutVector = Vector(xx + 41, yy - (moduleHeight/2) + 20)
 end
 
 function MidiNoteEmitterMod:turn(x, y, change)
-	self.noteEncoder:turn(change)
+	gEncoder:setValue(self.noteEncoderValue)
+	gEncoder:show()
+	gEncoder:moveTo(self.noteEncoderVector.x, self.noteEncoderVector.y)
+	gEncoder:turn(change)
+	self.noteEncoderValue = gEncoder:getValue()
+	self.component:setValue(self.noteEncoderValue)
+	self:redrawBackground()
+end
+
+function MidiNoteEmitterMod:invalidate()
+	if self.redrawPending then
+		self:redrawBackground()
+	end
 end
 
 function MidiNoteEmitterMod:setInCable(patchCable)
@@ -114,4 +120,81 @@ end
 
 function MidiNoteEmitterMod.ghostModule()
 	return buildGhostModule(moduleWidth, moduleHeight)
+end
+
+function MidiNoteEmitterMod:handleModClick(tX, tY, listener)
+	self.menuListener = listener
+	
+	local actions = {}
+	
+	table.insert(actions, {label="About"})
+	table.insert(actions, {label="Move"})
+	table.insert(actions, {label="Remove"})
+	
+	local contextMenu = ModuleMenu(actions)
+	contextMenu:show(function(action) 
+		if action == "About" then
+			local aboutPopup = ModAboutPopup("Emits a predefined midi note when it receives a 'bang'.")
+			aboutPopup:show()
+		elseif action == "Move" then
+			if self.menuListener ~= nil then 
+				self.menuListener(action) 
+			end
+		elseif action == "Remove" then
+			if self.menuListener ~= nil then 
+				self.menuListener(action) 
+			end
+		end
+
+	end)
+end
+
+function MidiNoteEmitterMod:unplug(cableId) self.component:unplug(cableId) end
+
+function MidiNoteEmitterMod:repositionBy(x, y)
+	self:moveBy(x, y)
+end
+
+function MidiNoteEmitterMod:moveFinish()
+	self.noteEncoderVector = Vector(self.x, self.y - 7)
+	self.socketInVector = Vector(self.x - 20, self.y - (moduleHeight/2) + 20)
+	self.socketOutVector = Vector(self.x + 21, self.y - (moduleHeight/2) + 20)
+end
+
+
+function MidiNoteEmitterMod:evaporate(onDetachConnected)
+	--first detach cables
+	if self.component:inConnected() then
+		onDetachConnected(self.inCable:getStartModId(), self.inCable:getCableId())
+		self.component:unplugIn()
+		self.inCable:evaporate()
+	end
+	
+	if self.component:outConnected() then
+		onDetachConnected(self.outCable:getEndModId(), self.outCable:getCableId())
+		self.component:unplugOut()
+		self.outCable:evaporate()
+	end
+	
+	self:remove()
+end
+
+function MidiNoteEmitterMod:toState()
+	local modState = {}
+	modState.modId = self.modId
+	modState.type = self:type()
+	modState.x = self.x
+	modState.y = self.y
+	
+	modState.noteEncoderValue = self.noteEncoderValue
+	
+	return modState
+end
+
+
+function MidiNoteEmitterMod:fromState(modState)
+	self.noteEncoderValue = modState.noteEncoderValue 
+  self.component:setValue(self.noteEncoderValue)
+
+	self:redrawBackground()	
 end

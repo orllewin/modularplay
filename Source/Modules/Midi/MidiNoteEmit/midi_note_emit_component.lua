@@ -22,9 +22,14 @@ function MidiNoteEmitterComponent:init()
 end
 
 function MidiNoteEmitterComponent:setValue(value)
-	self.midiNote = math.floor(map(value, 0.0, 1.0, 1, 127))
+	self.midiNote = math.floor(map(value, 0.0, 1.0, 36, 95))
 end
 
+function MidiNoteEmitterComponent:getNoteStr()
+	return self.midi:noteNumberToLabel(self.midiNote)
+end
+
+function MidiNoteEmitterComponent:getMidiNote() return self.midiNote end
 function MidiNoteEmitterComponent:setInCable(cable) self.inSocket:setCable(cable) end
 function MidiNoteEmitterComponent:setOutCable(cable) self.outSocket:setCable(cable) end
 function MidiNoteEmitterComponent:unplugIn() self.inSocket:unplug() end
