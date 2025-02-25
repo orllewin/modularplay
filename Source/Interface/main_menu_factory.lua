@@ -253,6 +253,10 @@ function MainMenuFactory:getMenuModList()
 					action = "RandomShifterMod"
 				},
 				{
+					label = "Note Emitter",
+					action = "MidiNoteEmitterMod"
+				},
+				{
 					label = "Linear Switch",
 					action = "SwitchMod"
 				},

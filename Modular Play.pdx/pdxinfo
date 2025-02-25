@@ -1,9 +1,0 @@
-name=Modular Play
-author=Orllewin
-description=A simple modular synth playground.
-bundleID=orllewin.playdate.modularplayer
-version=0.1.0
-buildNumber=20
-imagePath=Images/card.png
-pdxversion=20601
-buildtime=790441676
