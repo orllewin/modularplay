@@ -32,6 +32,15 @@ end
 function MidiNoteEmitterComponent:getMidiNote() return self.midiNote end
 function MidiNoteEmitterComponent:setInCable(cable) self.inSocket:setCable(cable) end
 function MidiNoteEmitterComponent:setOutCable(cable) self.outSocket:setCable(cable) end
+
+function MidiNoteEmitterComponent:unplug(cableId) 
+	if(self:inConnected() and self.inSocket:getCableId() == cableId) then
+		self:unplugIn()
+	end
+	if(self:outConnected() and self.outSocket:getCableId() == cableId) then
+		self:unplugOut()
+	end
+end
 function MidiNoteEmitterComponent:unplugIn() self.inSocket:unplug() end
 function MidiNoteEmitterComponent:unplugOut() self.outSocket:unplug() end
 function MidiNoteEmitterComponent:inConnected() return self.inSocket:connected() end

@@ -149,7 +149,9 @@ function MidiNoteEmitterMod:handleModClick(tX, tY, listener)
 	end)
 end
 
-function MidiNoteEmitterMod:unplug(cableId) self.component:unplug(cableId) end
+function MidiNoteEmitterMod:unplug(cableId) 
+	self.component:unplug(cableId) 
+end
 
 function MidiNoteEmitterMod:repositionBy(x, y)
 	self:moveBy(x, y)

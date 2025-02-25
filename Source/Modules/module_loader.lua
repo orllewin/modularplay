@@ -117,7 +117,7 @@ function ModuleLoader:loadPatch(patch, modules, cables, audioManager)
 			mod = MidiKeyboardMod(patchMod.x, patchMod.y, patchMod.modId)
 		elseif patchMod.type == "NormalisedToMidiMod" then
 			mod = NormalisedToMidiMod(patchMod.x, patchMod.y, patchMod.modId)
-		elseif patchMod.type == "NormalisedToMidiMod" then
+		elseif patchMod.type == "MidiNoteEmitterMod" then
 			mod = MidiNoteEmitterMod(patchMod.x, patchMod.y, patchMod.modId)
 		end
 		
