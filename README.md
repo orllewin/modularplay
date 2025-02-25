@@ -4,7 +4,9 @@
 
 ## About
 
-Modular Play is a casual playground game on [Playdate](https://play.date) for building little music making patches by connecting modules with cables. It's meant to be fun and not really for serious use but it can create some beautiful music.
+Modular Play is a casual playground game on [Playdate](https://play.date) for building little music making patches by connecting modules with cables. It's meant to be fun and not really for serious use but it can create some beautiful music. 
+
+**This project is as much fun on a computer running the Playdate simulator as it is on real Playdate hardware, there's fewer processor/memory constraints**.
 
 Itch.io link: [orllewin.itch.io/modularplay](https://orllewin.itch.io/modularplay)
 
