@@ -12,8 +12,7 @@ Itch.io link: [orllewin.itch.io/modularplay](https://orllewin.itch.io/modularpla
 
 ## Demos
 
-* [GB
-Studies In Form](https://www.youtube.com/watch?v=kZZADhuf0NI) - by Asher Graieg-Morrison
+* [Studies In Form](https://www.youtube.com/watch?v=kZZADhuf0NI) - by Asher Graieg-Morrison
 * [GB
 JAMUARY 2024: Ambient Tones With Ripplemaker & Playdate](https://www.youtube.com/watch?v=M_XUes4eDZY) - by Perplex On
 * [10/10 ambient highwater skinny jeans marimba yuccie mix](https://www.youtube.com/watch?v=YxTM-LiUHHM&t=43s) - by Arman Bohn
